@@ -20,13 +20,13 @@ Here are some topics I think I will learn:
 	- pwd
 	- cd
 * Kernel Behaviour
-* General Linux skills: terminal workspace, man pages, 
+* General Linux skills: terminal workspace, man pages, regex, 
 
 ## Git
 * How to efficiently use git
 * gh (same but from terminal)
 * branches
-* documentation :(
+* documentation :() 
 
 ## Furthermore
 I genuinly think my all-round linux understanding, operating system behaviour (like the kernel) and my skills as a programmer will be properly tested.
@@ -34,11 +34,11 @@ I hope to learn to use manpages, linux kernel behaviour,  the c programming lang
 
 ## Tools used
 micro 	- current texteditor
-bat 	- improved cat -> alias cat='bat'
+bat 	- improved cat 		-> alias cat='bat'
 git		- version control
 gh		- github from terminal
 lazygit	- :)
-yazi	- file explorer
+yazi	- file explorer 	-> alias see='yazi'
  
 
 
