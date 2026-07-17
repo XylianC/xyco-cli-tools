@@ -10,7 +10,7 @@ When I started this project I thought I'll just quickly learn these things, but 
 I understood what a great learning oppertunity this project could be, if taken seriously.
 
 As a proof of concept I have added a small demo: 
-![GIF Demonstrating custom echo application](https://github.com/.gif)
+![GIF Demonstrating custom echo application](https://github.com/XylianC/xyco-cli-tools/blob/master/documentation/gifs/echo-tool.gif)
 
 Here are some topics I think I will learn:
 ## Programming
