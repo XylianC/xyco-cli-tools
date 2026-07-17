@@ -11,9 +11,27 @@
 		I hope to learn to use manpages, linux kernel behaviour,  c programming language
 		maybe even... vim! :) 
 
-		
+		LS behaviour: 
 
-// dir is the current direcoty
+
+
+		XYCO LS behaviour: 
+
+
+============================================= */		
+
+//	--- Notes --- //
+// to learn; S_ISDIR
+// dirent.h
+// erno.h
+// unistd.h
+// sys/stat.h
+
+
+
+// things learned, take arguments like -a when executing a project (int argc, char *argv[])
+// why is * used? hmmm
+
 
 int show_all = 0;
 
@@ -56,6 +74,7 @@ int main (int argc, char *argv[]) {
 
 	const char *path = (optind < argc) ? argv[optind] : ".";
 
+	// dir is the current directory
 	DIR *dir = opendir(path);
 	if(!dir) {
 		perror("opendir");
