@@ -10,13 +10,14 @@ When I started this project I thought I'll just quickly learn these things, but 
 I understood what a great learning oppertunity this project could be, if taken seriously.
 
 As a proof of concept I have added a small demo: 
-![GIF Demonstrating custom echo application](https://github.com/XylianC/xyco-cli-tools/blob/master/documentation/gifs/echo-tool.gif)
+![GIF Demonstrating custom echo application](https://github.com/XylianC/xyco-cli-tools/blob/master/documentation/gifs/echo-demo-tool.gif)
 
 Here are some topics I think I will learn:
 ## Programming
 * C 	- 	programming language
 * C 	- 	pointers, memory allocation, efficient code
 * C 	- 	C is everywhere, what is it used for?
+* Makefiles - Compiling binaries
 
 ## Linux
 * Actually understand how command line tools I use a lot work:
@@ -45,7 +46,7 @@ gh		- github from terminal
 lazygit	- :)
 yazi	- file explorer 	-> alias see='yazi'
 vhs     - record terminal commands and show them as a gif 
-
+tmux    - I hope to use this to build a proper dev environment
 
 There is a seperate file with sources I find interesting and helped me in this project
 There is a seperate file with personal notes, not intented for everyone to see, but hey, who has time to clean up constantly right?
@@ -56,4 +57,13 @@ I will be as transparrant as possible on the use of ai so I can reflect on it pr
 AI is never allowed to write any code, I only want to use it for helping me understand some topics and I also want it testing my knowledge. 
 This would be mainly when I dont have acces to my laptop at that moment, like on pubnlic transport.
 
-This is a paragraph I started writing in NVIM!
+## Current "Working" Tools
+### Echo: 
+![GIF Demonstrating custom ECHO application](https://github.com/XylianC/xyco-cli-tools/blob/master/documentation/gifs/echo-tool.gif)
+
+### Ls (sort of):
+![GIF Demonstrating custom LS application](https://github.com/XylianC/xyco-cli-tools/blob/master/documentation/gifs/ls-tool.gif)
+
+
+## Notes:
+Note: Currently the binaries are just made in the home folder, as I'm not very comfortable with makefiles yet!

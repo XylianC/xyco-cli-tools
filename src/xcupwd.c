@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include "xcutils.h"
+
 /* 
  * This simple tool aims to recreate GNU-coreutil 'PWD'
  *
@@ -9,5 +11,5 @@
  */
 
 int main(int argc, char *argv[]) {
-		
+    print_header("PWD");
 }
