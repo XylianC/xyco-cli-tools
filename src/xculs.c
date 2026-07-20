@@ -38,23 +38,28 @@ int show_all = 0;
 
 
 int main (int argc, char *argv[]) {
-	print_header("LS");
+  int debug_enabled = 0;
+  int opt;
 
-    int opt;
-
-
-	while ((opt = getopt(argc, argv, "a")) != -1){
+	while ((opt = getopt(argc, argv, "ad")) != -1){
 		switch (opt) {
 			case 'a':
 				show_all = 1;
 				break;
-			default:
-				fprintf(stderr, "usage: %s [-a] [path]\n", argv[0]);
+      case ('d'):
+        debug_enabled = 1;
+        break;
+      default:
+				fprintf(stderr, "usage: %s [-a, d] [path]\n", argv[0]);
 				return 1;
 		}
 	}
 
-	const char *path = (optind < argc) ? argv[optind] : ".";
+  if(debug_enabled) {
+    print_debugs(argv[0]);
+  }
+
+  const char *path = (optind < argc) ? argv[optind] : ".";
 
 	// dir is the current directory
 	DIR *dir = opendir(path);
@@ -67,7 +72,7 @@ int main (int argc, char *argv[]) {
 
 	while((entry = readdir(dir)) != NULL) {
 		if(!show_all && entry->d_name[0] == '.') continue;
-		printf("%s\n", entry->d_name);
+		printf(" - %s\n", entry->d_name);
 
 	}
 

@@ -15,70 +15,118 @@
  */
 
 int main(int argc, char *argv[]) {
-    // this checks if the user put any arguments, if not it writes an error to the screen
-	if (argc < 2) {
-        fprintf(stderr, "usage: %s [-a,u,l] [text]\n", argv[0]);
-        return 1;
-    }
+  // this checks if the user put any arguments, if not it writes an error to the screen
+  if (argc < 2) {
+    fprintf(stderr, "usage: %s [-a,u,l,r,d] [text]\n", argv[0]);    
+    return 1;
+  }
 
-    int arguments;
-    int is_uppercase = 0;
-    int is_lowercase = 0;
+  int arguments;
+  int is_ascii = 0;
+  int is_uppercase = 0;
+  int is_lowercase = 0;
+  int is_reverse = 0;
+  int debug_enabled = 0;
 
-    // A function from my own utils file
-    print_header("ECHO");
-    
-	while ((arguments = getopt(argc, argv, "aul")) != -1) {
+	while ((arguments = getopt(argc, argv, "aulrd")) != -1) {
 		switch (arguments) {
 			case 'a':
-				printf("DEBUG: Succesfully registered 'a' as command\n");
-				break;
+        break;
       case 'u':
         is_uppercase = 1;
         break;
       case 'l':
         is_lowercase = 1;
         break;
-			default:
+      case 'r':
+        is_reverse = 1;
+        break;
+      case 'd':
+        debug_enabled = 1;
+        break;
+      default:
 				return 1;
 		  }
-	  }
+	}
+
+  if(debug_enabled) {
+    print_debugs(argv[0]);
+  }
 
     // I still dont fully understand thes line of code.
-    if(is_uppercase == 1) {
-      for (int i = optind; i < argc; i++) {
-        printf("%s", argv[i]);
+  if(is_uppercase == 1) {
+    for (int i = optind; i < argc; i++) {
+      printf("%s", argv[i]);
 
-        if (i < argc - 1) {
-          printf(" ");
-        }
-      }
-      printf("... but to UPPERCASE ofcourse! :)");    
-    } 
-    
-    if (is_lowercase == 1) {
-      for (int i = optind; i < argc; i++) {
-        printf("%s", argv[i]);
-
-        if (i < argc - 1) {
-          printf(" ");
-        }
-      }
-      printf("... but to lowercase ofcourse! :)");    
-    } 
-
-    if (is_lowercase == 0 && is_uppercase == 0) {
-      for (int i = optind; i < argc; i++) {
-        printf("%s", argv[i]);
-
-        if (i < argc - 1) {
-          printf(" ");
-        }
+      if (i < argc - 1) {
+        printf(" ");
       }
     }
+  
+    if(debug_enabled) {
+        print_debug_message("... but to UPPERCASE ofcourse! :)");    
+      } 
+  }
+    
+  if (is_lowercase == 1) {
+    for (int i = optind; i < argc; i++) {
+      printf("%s", argv[i]);
 
+      if (i < argc - 1) {
+        printf(" ");
+      }
+    }
+    
+    if(debug_enabled) {
+      print_debug_message("... but to lowercase ofcourse! :)");    
+    }
+  } 
+
+  if (is_lowercase == 0 && is_uppercase == 0) {
+    for (int i = optind; i < argc; i++) {
+      printf("%s", argv[i]);
+
+      if (i < argc - 1) {
+        printf(" ");
+      }
+    } 
+  
+    if(debug_enabled) { 
+      print_debug_message("... but normally ofcourse! :)");
+    }
+  }
+
+
+  if (is_reverse) {
+    for (int i = optind; i < argc; i++) {
+      printf("%s", argv[i]);
+
+      if (i < argc - 1) {
+        printf(" ");
+      }
+    }
+    
+    if(debug_enabled) {
+      print_debug_message("... but in reverse ofcourse! :)");
+    }
+  }
+    
+  if (is_ascii) {
+    for (int i = optind; i < argc; i++) {
+      printf("%s", argv[i]);
+
+      if (i < argc - 1) {
+        printf(" ");
+      }
+    }
+    
+    if(debug_enabled) {
+      print_debug_message("... but with ascii codes ofcourse! :)");
+    }
+  }
 
   printf("\n");
 
+  if(debug_enabled) {print_application_end();}
 	return 0;
 }
